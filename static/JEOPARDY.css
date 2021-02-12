@@ -1,0 +1,102 @@
+body{
+    height: 2000px;
+}
+
+#left-side{
+    /* background-color: blueviolet; */
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+#right-side{
+    /* background-color: brown; */
+    float: right;
+    width: 70%;
+    height: 100%;
+}
+#answer-bar{
+    /* background-color: chartreuse; */
+    margin: 10%;
+}
+#question-bar{
+    /* background-color: salmon; */
+    margin: 10%;
+}
+#question-bar h2{
+    display: inline;
+    margin-right: 5%;
+}
+.result-player{
+    width: 50%;
+    float: left;
+}
+#result-player-1{
+     background-color: #F012BE; 
+}
+#result-player-2{
+    background-color: snow;
+}
+
+
+/*=============================
+
+    BIG RED BUTTON
+
+=============================*/
+
+#bigRedButton {
+    position: relative;
+  
+    background: red; /* For browsers that do not support gradients */
+    /*background: -webkit-radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%)); Safari 5.1 to 6.0
+    background: -o-radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%));  For Opera 11.6 to 12.0 
+    background: -moz-radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%)); For Firefox 3.6 to 15 
+    background: radial-gradient(hsl(54, 100%, 50%), hsl(54, 100%, 40%)); Standard syntax */
+  
+    font-size: 1.4rem;
+    text-shadow: 0 -1px 0 #c3af07;
+    color: white;
+    border: solid 1px hsl(54, 100%, 20%);
+    border-radius: 100%;
+    height: 120px;
+    width: 120px;
+    z-index: 4;
+  
+    outline: none;
+  
+    box-shadow: inset 0 1px 0 hsl(54, 100%, 50%),
+                0 2px 0 hsl(54, 100%, 20%),
+                0 3px 0 hsl(54, 100%, 18%),
+                0 4px 0 hsl(54, 100%, 16%),
+                0 5px 0 hsl(54, 100%, 14%),
+                0 6px 0 hsl(54, 100%, 12%),
+                0 7px 0 hsl(54, 100%, 10%),
+                0 8px 0 hsl(54, 100%, 8%),
+                0 9px 0 hsl(54, 100%, 6%);
+  }
+  
+  #bigRedButton:hover {
+      background: #e41414; /* For browsers that do not support gradients */
+      /* background: -webkit-radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%)); Safari 5.1 to 6.0 
+      background: -o-radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%)); /For Opera 11.6 to 12.0 
+      background: -moz-radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%)); For Firefox 3.6 to 15 
+      background: radial-gradient(hsl(54, 100%, 45%), hsl(54, 100%, 35%));  Standard syntax  */
+    }
+  
+    #bigRedButton:active {
+      background: #d31313; /* For browsers that do not support gradients */
+      /* background: -webkit-radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%));  Safari 5.1 to 6.0 
+      background: -o-radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%)); For Opera 11.6 to 12.0 
+      background: -moz-radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%)); For Firefox 3.6 to 15 
+      background: radial-gradient(hsl(54, 100%, 43%), hsl(54, 100%, 33%));  Standard syntax  */
+  
+      top: 2px;
+  
+      box-shadow: inset 0 1px 0 hsl(54, 100%, 50%),
+                  0 2px 0 hsl(54, 100%, 20%),
+                  0 3px 0 hsl(54, 100%, 18%),
+                  0 4px 0 hsl(54, 100%, 16%),
+                  0 5px 0 hsl(54, 100%, 14%),
+                  0 6px 0 hsl(54, 100%, 12%),
+                  0 7px 0 hsl(54, 100%, 10%);
+    }

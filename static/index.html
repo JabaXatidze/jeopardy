@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="JEOPARDY.css">
+        <script src="JEOPARDY.js"></script>
+    </head>
+    <body>
+        <div id="left-side">
+            <div id="result-player-1" class="result-player">
+                <h2>Tato</h2>
+                <ul id="playes-1-points"> 
+                    
+                </ul>
+            </div>
+            <div id="result-player-2" class="result-player">
+                <h2>Toko</h2>
+                <ul id="playes-2-points"> 
+                    
+                </ul>
+            </div>
+        </div>
+        <div id="right-side">  
+            <div id="question-bar">
+                <div>
+                    <button onclick="displayQuestion()">Click</button>
+                    <h2 id="topic-name"></h2> 
+                    <h2 id="point"></h2>
+                </div>
+                
+                <p id="question"></p>
+            </div>
+            <div id="answer-bar">
+                <!-- <form id="form"> -->
+                    <input type="text" id="answer" name="answer"> 
+                    <!-- </form> -->
+                    <button onclick="handleAnswer()" id="button-1">Enter Answer</button>
+                <br><br>
+                <button onclick="handleStop()" id="bigRedButton">დააჭირე</button>
+            </div>
+        </div>
+    </body>
+</html>
