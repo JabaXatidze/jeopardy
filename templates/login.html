@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+<!-- Block -->
+<link rel="stylesheet" href="/static/register.css" />
+{% block content %}
+<div class="content-section cnt">
+  <form method="POST" action="">
+    <div class="container">
+      {{form.email.label(class="form-control-label") }} {{ form.email }}
+    </div>
+    <div class="container">
+      {{form.password.label(class="form-control-label")}} {{form.password}}
+    </div>
+  </form>
+</div>
+{% endblock content%}

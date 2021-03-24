@@ -1,53 +1,53 @@
-from flask import Flask
-app = Flask(__name__, static_url_path='', static_folder='static')
+from flask import Flask, render_template, url_for, flash, redirect
+from flask_sqlalchemy import SQLAlchemy
+from forms import RegistrationForm, LoginForm
+app = Flask(__name__, static_url_path="", static_folder="static")
+app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
+db = SQLAlchemy(app)
 
-data = [
-  {
-    "id": 1,  
-    "name": "სრუტეები",
-    "questions": [
-      {
-        "question": "ეს სრუტეები აკავშირებს ერთმანეთთან ხმელთაშუა და შავ ზღვებს.",
-        "answer": "ბოსფორი და დარდანელი",
-      },
-      {
-        "question":
-          "ამ სრუტის ერთ მხარეს მდებარეობს ესპანური ქალაქი სეუტა, მეორე მხარეს კი ამ სრუტის სახელის მქონე დასახლება. მისი სახელი არაბულიდან ითარგმნება, როგორც “ტარიქის მთა”",
-        "answer": "გიბრალტარი",
-      },
-    ],
-  },
-  {
-    "id": 2,
-    "name": "კინოციტატები",
-    "questions": [
-      {
-        "question":
-          "მერილინ ლოუელი: რატომ 13? ჯიმ ლოუელი: იმიტომ, რომ 12-ს მოსდევს",
-        "answer": "აპოლო 13",
-      },
-      {
-        "question":
-          "ჰარი: მხოლოდ მცირე დახმარება, ღმერთო, სულ ესაა რასაც გთხოვ! მაქსი: ვფიქრობ, რომ მასთან საკმაოდ ახლოს ვართ. მას უნდა ესმოდეს შენი",
-        "answer": "არმაგედონი",
-      },
-    ],
-  },
-]
+# class Category(db.Model):
+#   id = db.Column(db.Integer, primary_key=True)
+#   title = db.Column(db.String(100), nullable=False)
+
+# class Question(db.Model):
+#   id = db.Column(db.Integer, primary_key=True)
+#   question = db.Column(db.String, nullable=False)
+#   point = db.Column(db.Integer)
+#   title_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+
+# class User(db.Model):
+#   id = db.Column(db.Integer, primary_key=True)
+#   username = db.column(db.String(20))
+  
 
 
-# @app.route('/')
-# def hello_world():
-#     return app.send_static_file('JEOPARDY.html')
 
-# @app.route('/hello')
-# def hello_tato():
-#     return '<h1>Hello, Tato!</h1>'
 
-@app.route('/question/<topic_id>/<question_id>')
-def get_question(topic_id, question_id):
-    return { 
-        "question": data[int(topic_id)]["questions"][int(question_id)]
-    }
 
-app.run(debug=True)
+@app.route("/")
+@app.route("/home")
+def home():
+  return render_template("home.html")
+
+@app.route("/jeopardy")
+def jeopardy():
+  return ""
+
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+  print("Hello")
+  form = RegistrationForm()
+  if form.validate_on_submit():
+    print("sdjds")
+        # flash(f'Account created for {form.username.data}!', 'success')
+    return redirect(url_for('home'))
+  return render_template("register.html", form=form)
+
+@app.route("/login") 
+def login():
+  form = LoginForm()
+  return render_template("login.html", form=form)
+
+if __name__ == "__main__":
+  app.run(debug=True)
