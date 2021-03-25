@@ -1,4 +1,4 @@
-from main import db 
+from jeopardy import db 
 class Package(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   editor = db.Column(db.String(30), nullable=True)
